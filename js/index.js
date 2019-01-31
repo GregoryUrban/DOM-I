@@ -81,3 +81,33 @@ let mainParContent = Object.keys(siteContent['main-content']).filter((key) => ke
 mainPar.forEach((index, i) => mainPar[i].textContent = siteContent['main-content'][`${mainParContent[i]}`]);
 
 
+/// Contact
+hFour[5].textContent = siteContent['contact']['contact-h4'];
+
+mainPar[5].innerHTML = siteContent['contact']['address'].split('Street ').join(`Street <br>`);
+
+mainPar[6].innerHTML = siteContent['contact']['phone'];
+
+mainPar[7].innerHTML = siteContent['contact']['email'];
+
+// footer
+
+mainPar[8].innerHTML = siteContent['footer']['copyright'];
+
+// green nav
+navs.forEach(navs => navs.style.color = 'green');
+
+// task 4 prepend and append navs
+const firstNav = document.createElement('a');
+firstNav.href = '#';
+firstNav.textContent = 'Home';
+firstNav.style.color = 'green';
+
+nav.prepend(firstNav);
+
+const lastNav = document.createElement('a');
+lastNav.href = '#';
+lastNav.textContent = 'Get Started';
+lastNav.style.color = 'green';
+
+nav.append(lastNav);
