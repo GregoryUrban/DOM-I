@@ -38,6 +38,7 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
+// Images
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
@@ -47,9 +48,11 @@ cta.setAttribute('src', siteContent["cta"]["img-src"])
 let mainContent = document.getElementById("middle-img");
 mainContent.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
-let mainContent = document.getElementById("middle-img");
-// mainContent.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+//Navs
+let nav = document.querySelector("nav");
 
-// let navs = document.getElementsByTagName('nav')
-// console.log(navs);
-// nav.setAttribute('src', siteContent["nav"]["Home"])
+let navs = document.querySelectorAll("a");
+navs.forEach((index, i) => navs[i].textContent = siteContent["nav"][`${
+  Object.keys(siteContent["nav"])[i]
+}`]);
+
