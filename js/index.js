@@ -56,3 +56,28 @@ navs.forEach((index, i) => navs[i].textContent = siteContent["nav"][`${
   Object.keys(siteContent["nav"])[i]
 }`]);
 
+
+
+///CTA 
+let ctaH1 = document.querySelector('h1');
+ctaH1.innerHTML = siteContent['cta']['h1'].split(' ').join(`<br>`);
+
+let ctaButton = document.querySelector('button');
+ctaButton.textContent = siteContent['cta']['button'];
+
+
+
+///main-content
+let hFour = document.querySelectorAll('h4');
+
+let mainHFour = Object.keys(siteContent['main-content']).filter((key) => key.includes('h4'));
+
+hFour.forEach((index, i) => hFour[i].textContent = siteContent['main-content'][`${mainHFour[i]}`]);
+
+let mainPar = document.querySelectorAll('p');
+
+let mainParContent = Object.keys(siteContent['main-content']).filter((key) => key.includes('content'));
+
+mainPar.forEach((index, i) => mainPar[i].textContent = siteContent['main-content'][`${mainParContent[i]}`]);
+
+
